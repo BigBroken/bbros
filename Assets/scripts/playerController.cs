@@ -5,23 +5,24 @@ public class playerController : MonoBehaviour {
 
 	// Use this for initialization
 	//player stats
-	public int maxBombs = 1;
+	public int maxBombs = 4;
 	public float speed = 6.0F;
 	public int placedBombs = 0;
 	public int playerNum = 1;
 
 	//bomb prefab
-	public Transform Bomb;
+	public Transform bomb;
 
-	//private variables
+	//private variables	
 	private Vector3 moveDirection = Vector3.zero;
 
 
 	void placeBomb () {
+		Debug.Log (maxBombs, gameObject);
 		if(placedBombs < maxBombs) {
 			placedBombs++;
-//			Bomb bombClone = Instantiate(bomb, transform.position, transform.rotation) as Bomb;
-//			bombClone.player = 'player1' 
+			Transform bombCopy = (Transform) Instantiate(bomb, transform.position, transform.rotation);
+			bombCopy.GetComponent<bombController> ().player = gameObject;
 		}
 	}
 	
