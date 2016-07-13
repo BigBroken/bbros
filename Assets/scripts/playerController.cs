@@ -18,7 +18,6 @@ public class playerController : MonoBehaviour {
 
 
 	void placeBomb () {
-		Debug.Log (maxBombs, gameObject);
 		if(placedBombs < maxBombs) {
 			placedBombs++;
 			Transform bombCopy = (Transform) Instantiate(bomb, transform.position, transform.rotation);
